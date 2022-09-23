@@ -1,3 +1,4 @@
+import { MessageService } from 'primeng/api';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -9,21 +10,30 @@ import { CharlistComponent } from './components/charlist/charlist.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+import {TableModule} from 'primeng/table';
+import {ButtonModule} from 'primeng/button';
+import { ChatComponent } from './components/chat/chat.component';
+import {ToastModule} from 'primeng/toast';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
     NewcharComponent,
     CharviewComponent,
-    CharlistComponent
+    CharlistComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    TableModule,
+    ButtonModule,
+    ToastModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [{provide : MessageService}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

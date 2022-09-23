@@ -16,4 +16,8 @@ export class CharService {
   create(newChar : CharacterForm) : Observable<Character> {
     return this._client.post<Character>(this.url+"character", newChar)
   }
+
+  getAll() : Observable<Character[]> {
+    return this._client.get<Character[]>(this.url+"character")
+  }
 }

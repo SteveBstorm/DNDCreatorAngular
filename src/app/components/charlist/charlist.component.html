@@ -1,1 +1,23 @@
-<p>charlist works!</p>
+<p-table [value]="liste">
+  <ng-template pTemplate="header">
+    <tr>
+        <th>Nom</th>
+        <th>Race</th>
+        <th>Force</th>
+        <th>Endurance</th>
+        <th>PV</th>
+        <th></th>
+    </tr>
+</ng-template>
+<ng-template pTemplate="body" let-char>
+    <tr>
+        <td>{{char.nom}}</td>
+        <td>{{char.race}}</td>
+        <td>{{char.force}}</td>
+        <td>{{char.endurance}}</td>
+        <td>{{char.pv}}</td>
+        <td><p-button (click)="detail(char.id)">Details</p-button></td>
+    </tr>
+</ng-template>
+</p-table>
+<p-toast></p-toast>

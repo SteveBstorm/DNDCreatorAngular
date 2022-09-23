@@ -1,0 +1,12 @@
+Pseudo : <input type="text" [(ngModel)]="sender"> <br />
+Message : <input type="text" [(ngModel)]="content"><br />
+<button (click)="sendMessage()">Envoi</button> &nbsp;
+<button (click)="rejoindre()">Join group</button> &nbsp;
+<button (click)="envoiAuGroup()">send group</button> &nbsp;
+<div style="border : 1px black solid">
+<ul>
+  <li *ngFor="let m of messageList">
+    <strong>{{m.sender}}</strong> : {{m.content}}
+  </li>
+</ul>
+</div>
